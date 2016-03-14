@@ -1,0 +1,22 @@
+﻿<VSContent xmlns="http://schemas.microsoft.com/developer/vscontent/2005">
+  <Content>
+    <FileName>simplerenderer.h.snippet</FileName>
+    <DisplayName>SimpleRenderer.h Code Snippet</DisplayName>
+    <Description>Ex2 SimpleRenderer.h code</Description>
+    <FileContentType>Code Snippet</FileContentType>
+    <ContentVersion>2.0</ContentVersion>
+    <Attributes>
+      <Attribute name="lang" value="cpp"/>
+    </Attributes>
+  </Content>
+  <Content>
+    <FileName>simplerenderer.cpp.snippet</FileName>
+    <DisplayName>SimpleRenderer.cpp Code Snippet</DisplayName>
+    <Description>Ex2 SimpleRenderer.cpp code</Description>
+    <FileContentType>Code Snippet</FileContentType>
+    <ContentVersion>2.0</ContentVersion>
+    <Attributes>
+      <Attribute name="lang" value="cpp"/>
+    </Attributes>
+  </Content>
+</VSContent>

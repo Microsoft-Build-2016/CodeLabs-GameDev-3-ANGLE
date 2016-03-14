@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>SimpleRenderer.cpp</Title>
+      <Shortcut>SimpleRenderer.cpp</Shortcut>
+      <Description>Code snippet for SimpleRenderer.cpp</Description>
+      <Author>Microsoft Corporation</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>expression</ID>
+          <ToolTip>Expression to evaluate</ToolTip>
+          <Default>true</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[//
+// This file is used by the template to render a basic scene using GL.
+//
+
+#include "pch.h"
+#include "SimpleRenderer.h"
+
+using namespace Platform;
+using namespace Windows::UI::Core;
+using namespace Windows::System;
+using namespace Breakout;
+
+SimpleRenderer::SimpleRenderer() :
+    mWindowWidth(0),
+    mWindowHeight(0),
+    mDrawCount(0)
+{
+    mTimer.reset(CreateTimer());
+}
+
+SimpleRenderer::~SimpleRenderer()
+{
+}
+
+void SimpleRenderer::Draw()
+{
+    if (mGame != nullptr)
+    {
+        float deltaTime = static_cast<float>(mTimer->getDeltaTime());
+        mGame->ProcessInput(deltaTime);
+        mGame->Update(deltaTime);
+        mGame->Render();
+    }
+
+    mDrawCount += 1;
+}
+
+void SimpleRenderer::UpdateWindowSize(GLsizei width, GLsizei height)
+{
+    if (mGame == nullptr)
+    {
+        mGame = std::make_shared<Game>(width, height);
+        mGame->Init();
+        mTimer->start();
+    }
+
+    mWindowWidth = width;
+    mWindowHeight = height;
+}]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
