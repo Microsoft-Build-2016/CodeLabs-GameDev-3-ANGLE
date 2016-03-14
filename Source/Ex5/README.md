@@ -21,9 +21,7 @@ In this exercise you will complete the following steps:
 1. Learn how the resource files are added to the game.
 2. Modify a game resource.
 
-#### Handling Keyboard and Pointer Events ####
-One of the difficulties of working with keyboard and pointer events in an ANGLE app is that the events are sent to the app's UI thread or high priority input thread. 
-However, ANGLE's OpenGL context was created on the rendering thread. If we were to send the events directly to our game code, the events would occur on the wrong thread and the app would crash. In order to work around this, we will queue the events into a thread safe queue so the events can be consumed on the rendering thread. The QueuePointerEvent() and QueueKeyEvent() methods will handle the queuing of the events in the code listed in Step 7.
+#### Adding Resources to the Game ####
 
 1. Open Breakout.sln in the CodeLabs/Workshops/Games/Module3-ANGLE/Source/Ex3/Begin folder.  
 
@@ -35,269 +33,87 @@ However, ANGLE's OpenGL context was created on the rendering thread. If we were 
 	
 3. Press F5 to build and run the project. The app should look like this:
 
-	![Breakout App](../../Images/ex2-breakout-app.png?raw=true "Breakout App")
+	![No Resources](../../Images/ex5-no-resources.png?raw=true "No Resources")
 
-	_Breakout App_
+	_No resources_
 
-4. Open the file OepnGLESPage.xaml.h. Add the following lines of code at the end of the class declaration in the private section:
+    The resource have been removed from the project and you should see a black window.
 
-    ````C++
-    // Setup user input
-    void CreateInput();
- 
-    // pointer handling functions
-    void OnPointerPressed(Platform::Object^ sender, Windows::UI::Core::PointerEventArgs^ e);
-    void OnPointerMoved(Platform::Object^ sender, Windows::UI::Core::PointerEventArgs^ e);
-    void OnPointerReleased(Platform::Object^ sender, Windows::UI::Core::PointerEventArgs^ e);
+4. We will now add all of the resource files to our game. The resource files are located in CodeLabs-GameDev-3-ANGLE\Source\Resources.
 
-    // keyboard handling functions
-    void OnKeyPressed(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::KeyEventArgs^ args);
-    void OnKeyReleased(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::KeyEventArgs^ args);
+ 	![Resources Folder](../../Images/ex5-resources-folder.png?raw=true "Resources Folder")
 
-    Windows::Foundation::IAsyncAction^ mInputLoopWorker;
-    Windows::UI::Core::CoreIndependentInputSource^ mCoreInput;
-    float mScreenResolutionScale;
-    ````
+	_Resources folder_
 
-5. Open the file OpenGLESPage.xaml.cpp. Add the following using declarations at the top of the file:
+5. Instead of adding each resource file manually to our project, we are going to use a [property sheet](./Begin/Breakout/resources.props) to tell the project where to find the resource files. 
+    1. To add a property sheet, select Property Manager from the View menu
 
-    ````C++
-    using namespace Windows::System::Threading;
-    using namespace Windows::UI::Core;
-    using namespace Windows::UI::Xaml::Input;
-    using namespace WinRT;
-    ````
+ 	    ![Property Manager](../../Images/ex5-property-manager.png?raw=true "Property Manager")
 
-6. Modify OpenGLESPage::OpenGLESPage() after line 20 to include the following code:
+	    _Property Manager_
 
 
-    ````C++
-    OpenGLESPage::OpenGLESPage(OpenGLES* openGLES) :
-        mOpenGLES(openGLES),
-        mRenderSurface(EGL_NO_SURFACE),
-        mScreenResolutionScale(1.0f)
-    {
-        InitializeComponent();
+    2. Then right click on the Breakout project and select Add Existing Property Sheet...
 
-        Windows::UI::Core::CoreWindow^ window = Windows::UI::Xaml::Window::Current->CoreWindow;
+ 	    ![Add Exising Property Sheet](../../Images/ex5-property-manager.png?raw=true "Add Exising Property Sheet")
 
-        window->VisibilityChanged +=
-            ref new Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow^, Windows::UI::Core::VisibilityChangedEventArgs^>(this, &OpenGLESPage::OnVisibilityChanged);
+	    _Add exising property sheet_
 
-        this->Loaded +=
-            ref new Windows::UI::Xaml::RoutedEventHandler(this, &OpenGLESPage::OnPageLoaded);
+    3. Then select the file resources.props file in the folder CodeLabs-GameDev-3-ANGLE\Source\Ex5\Begin\Breakout
 
-        window->KeyDown += ref new TypedEventHandler<CoreWindow^, KeyEventArgs^>(this, &OpenGLESPage::OnKeyPressed);
-        window->KeyUp += ref new TypedEventHandler<CoreWindow^, KeyEventArgs^>(this, &OpenGLESPage::OnKeyReleased);
-        CreateInput();
-    }
-    ````
+ 	    ![Add resources.props](../../Images/ex5-resourceprops.png?raw=true "resources.props")
+
+	    _resources.props_
+
+6. Close the Property Manager window.
+
+ 	![Close Property Manager](../../Images/ex5-close-property-manager.png?raw=true "Close Property Manager")
+
+	_Close Property Manager_
 
 
-7. Add the following methods to the end of OpenGLESPage.xaml.cpp:
+7. Press F5 to build and run the project. The app should look like this:
+
+	![Breakout App with Resources](../../Images/ex4-breakout-app-input.png?raw=true "Breakout App with Resources")
+
+	_Breakout App with Resources_
+
+
+8. Now we are going to add a resource to our game. Copy the file
+
+    CodeLabs-GameDev-3-ANGLE\Source\Ex5\Resources\textures\awesomeface.png
+
+    to the folder:
+
+    CodeLabs-GameDev-3-ANGLE\Source\Resources\textures\
+
+9. Open the file Source/Game.cpp and change line 53 from
 
     ````C++
-    void OpenGLESPage::CreateInput()
-    {
-        // Register our SwapChainPanel to get independent input pointer events
-        auto workItemHandler = ref new WorkItemHandler([this](IAsyncAction ^)
-        {
-            // The CoreIndependentInputSource will raise pointer events for the specified device types on whichever thread it's created on.
-            mCoreInput = swapChainPanel->CreateCoreIndependentInputSource(
-                Windows::UI::Core::CoreInputDeviceTypes::Mouse |
-                Windows::UI::Core::CoreInputDeviceTypes::Touch |
-                Windows::UI::Core::CoreInputDeviceTypes::Pen
-                );
-
-            // Register for pointer events, which will be raised on the background thread.
-            mCoreInput->PointerPressed += ref new TypedEventHandler<Object^, PointerEventArgs^>(this, &OpenGLESPage::OnPointerPressed);
-            mCoreInput->PointerMoved += ref new TypedEventHandler<Object^, PointerEventArgs^>(this, &OpenGLESPage::OnPointerMoved);
-            mCoreInput->PointerReleased += ref new TypedEventHandler<Object^, PointerEventArgs^>(this, &OpenGLESPage::OnPointerReleased);
-
-            // Begin processing input messages as they're delivered.
-            mCoreInput->Dispatcher->ProcessEvents(CoreProcessEventsOption::ProcessUntilQuit);
-        });
-
-        // Run task on a dedicated high priority background thread.
-        mInputLoopWorker = ThreadPool::RunAsync(workItemHandler, WorkItemPriority::High, WorkItemOptions::TimeSliced);
-    }
-
-    void OpenGLESPage::OnPointerPressed(Object^ sender, PointerEventArgs^ e)
-    {
-        mRenderer->QueuePointerEvent(PointerEventType::PointerPressed, e->CurrentPoint->Position.X * mScreenResolutionScale, e->CurrentPoint->Position.Y * mScreenResolutionScale, e->CurrentPoint->PointerId);
-    }
-
-    void OpenGLESPage::OnPointerMoved(Object^ sender, PointerEventArgs^ e)
-    {
-        mRenderer->QueuePointerEvent(PointerEventType::PointerMoved, e->CurrentPoint->Position.X * mScreenResolutionScale, e->CurrentPoint->Position.Y * mScreenResolutionScale, e->CurrentPoint->PointerId);
-    }
-
-    void OpenGLESPage::OnPointerReleased(Object^ sender, PointerEventArgs^ e)
-    {
-        mRenderer->QueuePointerEvent(PointerEventType::PointerReleased, e->CurrentPoint->Position.X * mScreenResolutionScale, e->CurrentPoint->Position.Y * mScreenResolutionScale, e->CurrentPoint->PointerId);
-    }
-
-    void OpenGLESPage::OnKeyPressed(CoreWindow^ sender, KeyEventArgs^ e)
-    {
-        if (!e->KeyStatus.WasKeyDown)
-        {
-            //log("OpenGLESPage::OnKeyPressed %d", e->VirtualKey);
-            if (mRenderer)
-            {
-                mRenderer->QueueKeyEvent(KeyEventType::KeyDown, e);
-            }
-        }
-    }
-
-    void OpenGLESPage::OnKeyReleased(CoreWindow^ sender, KeyEventArgs^ e)
-    {
-        //log("OpenGLESPage::OnKeyReleased %d", e->VirtualKey);
-        if (mRenderer)
-        {
-            mRenderer->QueueKeyEvent(KeyEventType::KeyUp, e);
-        }
-    }
+    ResourceManager::LoadTexture("textures/ball.png", GL_TRUE, "face");
     ````
-8. Open the file SimpleRenderer.h and replace its contents with the following
+    to:
 
     ````C++
-    #pragma once
-
-    #include "pch.h"
-    #include "Game.h"
-    #include "Timer.h"
-    #include <memory>
-    #include "winrt/Input.h"
-
-    namespace Breakout
-    {
-        class SimpleRenderer : public WinRT::Input
-        {
-        public:
-            SimpleRenderer();
-            ~SimpleRenderer();
-            void Draw();
-            void UpdateWindowSize(GLsizei width, GLsizei height);
-
-        private:
-            std::shared_ptr<Game> mGame;
-            std::unique_ptr<Timer> mTimer;
-
-
-            GLsizei mWindowWidth;
-            GLsizei mWindowHeight;
-
-            int mDrawCount;
-
-            //User input
-            virtual void OnPointerPressed(std::shared_ptr<WinRT::PointerEvent> e);
-            virtual void OnPointerMoved(std::shared_ptr<WinRT::PointerEvent> e);
-            virtual void OnPointerReleased(std::shared_ptr<WinRT::PointerEvent> e);
-            virtual void OnKeyDown(std::shared_ptr<WinRT::KeyEvent> e);
-            virtual void OnKeyUp(std::shared_ptr<WinRT::KeyEvent> e);
-            void SetKeyState(Windows::System::VirtualKey key, bool state);
-        };
-    }
-    ````
-    Notice that SimpleRenderer now inherits from the WinRT::Input class. This helper class implements the code needed to queue the keyboard and pointer events that arrive on the apps UI thread and make the events available to the rendering thread. You can look at this code in Framework/source/utils/winrt/Input.cpp. The code uses a thread safe concurrent_queue to handle the queuing of the events.
-
-9. Open the file SimpleRenderer.cpp. Add the following using declaration near the top of the file:
-
-    ````C++
-    using namespace WinRT;
+    ResourceManager::LoadTexture("textures/awesomeface.png", GL_TRUE, "face");
     ````
 
-10. Add a call to ProcessEvents() in the SimpleRenderer::Draw() method near line 30;
+10. Save your work. Press F5 to build and run your app. Your app should now look like this:
 
-    ````C++
-    void SimpleRenderer::Draw()
-    {
-        if (mGame != nullptr)
-        {
-            float deltaTime = static_cast<float>(mTimer->getDeltaTime());
-            <pre><b>ProcessEvents();</b></pre>
-            mGame->ProcessInput(deltaTime);
-            mGame->Update(deltaTime);
-            mGame->Render();
-        }
+	![Ex5 Complete](../../Images/ex5-end.png?raw=true "Ex5 Complete")
 
-        mDrawCount += 1;
-    }
-    ````
-    ProcessEvents() will dequeue the events and send them to our game.
-
-11. Add the following methods to the end of SimpleRenderer.cpp
-
-    ````C++
-    void SimpleRenderer::OnPointerPressed(std::shared_ptr<PointerEvent> e)
-    {
-        mGame->CursorDown(e->_x, e->_y);
-    }
-
-    void SimpleRenderer::OnPointerMoved(std::shared_ptr<PointerEvent> e)
-    {
-        mGame->CursorMove(e->_x, e->_y);
-    }
-
-    void SimpleRenderer::OnPointerReleased(std::shared_ptr<PointerEvent> e)
-    {
-        mGame->CursorUp(e->_x, e->_y);
-    }
-
-    void SimpleRenderer::OnKeyDown(std::shared_ptr<KeyEvent> e)
-    {
-        KeyEventArgs^ args = e->m_key.Get();
-        SetKeyState(args->VirtualKey, true);
-    }
-
-    void SimpleRenderer::OnKeyUp(std::shared_ptr<KeyEvent> e)
-    {
-        KeyEventArgs^ args = e->m_key.Get();
-        SetKeyState(args->VirtualKey, false);
-    }
-
-    void SimpleRenderer::SetKeyState(VirtualKey key, bool state)
-    {
-        GLboolean keyDown = state ? GL_TRUE : GL_FALSE;
-        switch (key)
-        {
-        case VirtualKey::D:
-        case VirtualKey::Right:
-            mGame->Keys[GLFW_KEY_D] = keyDown;
-            break;
-
-        case VirtualKey::A:
-        case VirtualKey::Left:
-            mGame->Keys[GLFW_KEY_A] = keyDown;
-            break;
-
-        case VirtualKey::Space:
-            mGame->Keys[GLFW_KEY_SPACE] = keyDown;
-            break;
-        }
-    }
-    ````
-    As you may have noticed in the above code, keyboard keys are represented by VirtualKeys. You will need to map the VirtualKey codes to the expected character codes used by your game.
-
-12. Save your work. Press F5 to build and run your app. Your app should now respond to the following input events:
-    - the space bar will launch the ball
-    - the first click or touch event will also launch the ball
-    - the left and right arrows will move the paddle
-    - the A and D keys will also move the paddle
-    - mouse and touch events will move the paddle
-
-	![Breakout App with Input](../../Images/ex4-breakout-app-input.png?raw=true "Breakout App with Input")
-
-	_Breakout App with Input_
+	_Ex5 Complete_
 
 #### Discussion ####
 
-You have now learned how to add and modify the resources for your game.
+You have now learned how to add and modify the resources for your game. By placing the resources for your game outside of the Visual Studio project folders
+it will be easier to make your game cross platform. By using a property sheet to automatically add the game resources, you won't have to manually add potentially
+hundreds of resource files to your game project.
 
 
 #### Next ####
 
 The next exercise is optional. Feel free to continue or return to the Start to complete the lab.
 
-- Continue on to [Exercise 5: Windows 10 Phone](../..//Source/Ex6/README.md)
+- Continue on to [Exercise 6: Windows 10 Phone](../../Source/Ex6/README.md)
 - Return to [Start](../../README.md)

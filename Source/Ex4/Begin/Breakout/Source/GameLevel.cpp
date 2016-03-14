@@ -70,8 +70,14 @@ void GameLevel::Resize(GLuint levelWidth, GLuint levelHeight)
 void GameLevel::init(std::vector<std::vector<GLuint>> tileData, GLuint levelWidth, GLuint levelHeight)
 {
     // Calculate dimensions
+    if (tileData.size() == 0) 
+    {
+        return;
+    }
+
     GLuint height = static_cast<GLuint>(tileData.size());
     GLuint width = static_cast<GLuint>(tileData[0].size()); // Note we can index vector at [0] since this function is only called if height > 0
+
     GLfloat unit_width = levelWidth / static_cast<GLfloat>(width);
     GLfloat unit_height = levelHeight / static_cast<GLfloat>(height);
     // Initialize level tiles based on tileData		
