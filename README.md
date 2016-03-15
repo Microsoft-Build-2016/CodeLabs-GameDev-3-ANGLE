@@ -71,11 +71,12 @@ Estimated time to complete this module: **60 minutes**
 This module includes the following exercises:
 
 1. [Create a new ANGLE project using a Visual Studio Template](./Source/Ex1/README.md)
-2. [Integrate your game code with ANGLE](./Source/Ex2/README.md)
-3. [Resizing the Window](./Source/Ex3/README.md)
-4. [Handling keyboard and pointer events](./Source/Ex4/README.md)
-5. [Adding Resources to the Game](./Source/Ex5/README.md)
-6. [Windows 10 Phone](./Source/Ex6/README.md)
+1. [Integrate your game code with ANGLE](./Source/Ex2/README.md)
+1. [Resizing the Window](./Source/Ex3/README.md)
+1. [Handling keyboard and pointer events](./Source/Ex4/README.md)
+1. [Adding Resources to the Game](./Source/Ex5/README.md)
+1. [Windows 10 Phone](./Source/Ex6/README.md)
+
 ---
 
 <a name="Summary" />
@@ -84,11 +85,11 @@ This module includes the following exercises:
 By completing this module you should have learned:
 
 1. how to create a new ANGLE project using a Visual Studio template.
-2. how to integrate your game code with an ANGLE app.
-3. how to handle window resizing.
-4. how to handle keyboard and pointer events.
-5. how to add resources to your game.
-6. how to run your game on Windows 10 Phone
+1. how to integrate your game code with an ANGLE app.
+1. how to handle window resizing.
+1. how to handle keyboard and pointer events.
+1. how to add resources to your game.
+1. how to run your game on Windows 10 Phone
 
 For more information on ANGLE, please refer to the [ANGLE wiki](https://github.com/MSOpenTech/angle/wiki) and the [ANGLE GitHub repo](https://github.com/MSOpenTech/angle).
 
