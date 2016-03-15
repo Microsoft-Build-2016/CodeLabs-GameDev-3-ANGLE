@@ -26,8 +26,10 @@ In this module, you will learn how to:
 The following is required to complete this module:
 
 - [Visual Studio Community 2015][1] or greater.
+- [ANGLE][2] built and installed on your computer.
 
 [1]: https://www.visualstudio.com/products/visual-studio-community-vs
+[2]: https://github.com/MSOpenTech/angle
 
 > **Note:** You can take advantage of the [Visual Studio Dev Essentials]( https://www.visualstudio.com/en-us/products/visual-studio-dev-essentials-vs.aspx) subscription in order to get everything you need to build and deploy your app on any platform.
 
@@ -35,9 +37,19 @@ The following is required to complete this module:
 ### Setup ###
 In order to run the exercises in this module, you will need to set up your environment first.
 
-1. Open Windows Explorer and browse to this module's **Source** folder (CodeLabs/Workshops/Games/Module3-ANGLE/Source/).
-1. Right-click on **Setup.cmd** and select **Run as administrator** to launch the setup process that will configure your environment and install the Visual Studio code snippets for this module.
-1. If the User Account Control dialog box is shown, confirm the action to proceed.
+1. ANGLE needs to be built and installed on your computer. **For this lab, ANGLE has already been built and installed in c:\angle**. If ANGLE is not installed on your computer, you will need to do the following:
+
+    ####Compiling ANGLE from source####
+    1. Clone or download ANGLE from our GitHub repository
+    1. Install our easy-to-use Visual Studio templates by running install.bat in the /templates/ directory of your copy of ANGLE.
+    1. Open the appropriate ANGLE Visual Studio solution for your project, and build all flavors of it. The Windows 10 Visual Studio solution for ANGLE is located in angle/winrt/10/src/angle.sln
+    1. For more information, see [ANGLE](https://github.com/MSOpenTech/angle)
+
+2. Install the code snippets used by this lab
+
+    1. Open Windows Explorer and browse to this module's **Source** folder (CodeLabs/Workshops/Games/Module3-ANGLE/Source/).
+    1. Right-click on **Setup.cmd** and select **Run as administrator** to launch the setup process that will configure your environment and install the Visual Studio code snippets for this module.
+    1. If the User Account Control dialog box is shown, confirm the action to proceed.
 
 > **Note:** Make sure you have checked all the dependencies for this module before running the setup.
 
