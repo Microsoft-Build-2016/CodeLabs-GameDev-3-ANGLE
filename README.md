@@ -14,9 +14,8 @@ In this module, you will learn how to:
 
 - Create a new ANGLE project using a Visual Studio Template
 - Integrate your game code with ANGLE
-- Add touch events to your app
-- Add keyboard events to your app
 - Handle window resizing
+- Add touch and keyboard events to your app
 - Add game resources to your app
 - Run your game on Windows 10 Phone
 
