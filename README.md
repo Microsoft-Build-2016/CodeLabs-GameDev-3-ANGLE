@@ -39,7 +39,7 @@ In order to run the exercises in this module, you will need to set up your envir
 1. ANGLE needs to be built and installed on your computer. **For this lab, ANGLE has already been built and installed in c:\angle**. If ANGLE is not installed on your computer, you will need to do the following:
 
     ####Compiling ANGLE from source####
-    1. Clone or download ANGLE from our GitHub repository
+    1. Clone or download ANGLE from our [GitHub](https://github.com/MSOpenTech/angle) repository
     1. Install our easy-to-use Visual Studio templates by running install.bat in the /templates/ directory of your copy of ANGLE.
     1. Open the appropriate ANGLE Visual Studio solution for your project, and build all flavors of it. The Windows 10 Visual Studio solution for ANGLE is located in angle/winrt/10/src/angle.sln
     1. For more information, see [ANGLE](https://github.com/MSOpenTech/angle)
