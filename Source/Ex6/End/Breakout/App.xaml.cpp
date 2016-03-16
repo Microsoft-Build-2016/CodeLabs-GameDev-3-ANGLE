@@ -77,12 +77,6 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 
         }
 
-        if (rootFrame->Content == nullptr)
-        {
-            // When the navigation stack isn't restored navigate to the first page,
-            // configuring the new page by passing required information as a navigation
-            // parameter
-        }
         // Place the frame in the current Window
         Window::Current->Content = rootFrame;
         // Ensure the current window is active
