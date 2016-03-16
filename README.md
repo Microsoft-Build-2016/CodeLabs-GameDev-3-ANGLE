@@ -58,12 +58,12 @@ Estimated time to complete this module: **60 minutes**
 ## Exercises ##
 This module includes the following exercises:
 
-1. [Create a new ANGLE project using a Visual Studio Template](./Source/Ex1/README.md)
-1. [Integrate your game code with ANGLE](./Source/Ex2/README.md)
+1. [Creating a new ANGLE project using a Visual Studio Template](./Source/Ex1/README.md)
+1. [Integrating your game code with ANGLE](./Source/Ex2/README.md)
 1. [Resizing the Window](./Source/Ex3/README.md)
 1. [Handling keyboard and pointer events](./Source/Ex4/README.md)
-1. [Adding Resources to the Game](./Source/Ex5/README.md)
-1. [Windows 10 Phone](./Source/Ex6/README.md)
+1. [(Optional) Adding Resources to the Game](./Source/Ex5/README.md)
+1. [(Optional) Windows 10 Phone](./Source/Ex6/README.md)
 
 ---
 
@@ -83,4 +83,3 @@ For more information on ANGLE, please refer to the [ANGLE wiki](https://github.c
 
 
 > **Note:** You can take advantage of the [Visual Studio Dev Essentials]( https://www.visualstudio.com/en-us/products/visual-studio-dev-essentials-vs.aspx) subscription in order to get everything you need to build and deploy your app on any platform.
-
