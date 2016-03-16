@@ -44,18 +44,7 @@ In order to run the exercises in this module, you will need to set up your envir
     1. Open the appropriate ANGLE Visual Studio solution for your project, and build all flavors of it. The Windows 10 Visual Studio solution for ANGLE is located in angle/winrt/10/src/angle.sln
     1. For more information, see [ANGLE](https://github.com/MSOpenTech/angle)
 
-2. Install the code snippets used by this lab
-
-    1. Open Windows Explorer and browse to this module's **Source** folder (CodeLabs/Workshops/Games/Module3-ANGLE/Source/).
-    1. Right-click on **Setup.cmd** and select **Run as administrator** to launch the setup process that will configure your environment and install the Visual Studio code snippets for this module.
-    1. If the User Account Control dialog box is shown, confirm the action to proceed.
-
 > **Note:** Make sure you have checked all the dependencies for this module before running the setup.
-
-<a name="CodeSnippets" />
-### Using the Code Snippets ###
-
-Throughout the module document, you will be instructed to insert code blocks. For your convenience, most of this code is provided as Visual Studio Code Snippets, which you can access from within Visual Studio 2015 to avoid having to add it manually. 
 
 >**Note**: Each exercise is accompanied by a starting solution located in the **Begin** folder of the exercise that allows you to follow each exercise independently of the others. Please be aware that the code snippets that are added during an exercise are missing from these starting solutions and may not work until you have completed the exercise. Inside the source code for an exercise, you will also find an **End** folder containing a Visual Studio solution with the code that results from completing the steps in the corresponding exercise. You can use these solutions as guidance if you need additional help as you work through this module.
 

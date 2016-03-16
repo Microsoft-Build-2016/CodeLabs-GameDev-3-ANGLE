@@ -12,26 +12,26 @@ In this exercise you will modify the ANGLE project you created in Exercise 1 to 
 In this exercise you will complete the following steps:
 
 1. Modify the XAML page created by the ANGLE template to prepare the app for our game.
-2. Connect the ANGLE framework to our game's update/render loop.
+1. Connect the ANGLE framework to our game's update/render loop.
 
 #### Modify the XAML ####
 The ANGLE XAML App for OpenGL ES template generates a Windows 10 XAML app that is correctly set up to use OpenGL ES 2.0 in your app. Your game code will need to be integrated with the OpenGLESPage.xaml page. This page handles the initialization of the OpenGL context and creates a rendering loop in which you will update and render your game. There are a few minor modifications we need to make to the OpenGLESPage XAML code to prepare the page for our game.
 
 1. Open Breakout.sln in the CodeLabs/Workshops/Games/Module3-ANGLE/Source/Ex2/Begin folder. 
 
-2. Select Debug x64 from the Project Configuration and Platform dropdowns.
+1. Select Debug x64 from the Project Configuration and Platform dropdowns.
 
 	![Configuring the build target](../../Images/ex2-debug-x64.PNG?raw=true "Configuring the build target")
 
 	_Configuring the build target_
 	
-3. Press F5 to build and run the project. The app should look like this:
+1. Press F5 to build and run the project. The app should look like this:
 
 	![ANGLE app](../../Images/ex1-sample-angle-app.PNG?raw=true "ANGLE app")
 
 	_ANGLE app_
 
-4. Close the app to stop debugging. We need to first make some simple modifications to the app. First of all, let's remove the text "OpenGL ES and XAML". Open the file OpenGLESPage.xaml and remove the TextBlock at line 11.
+1. Close the app to stop debugging. We need to first make some simple modifications to the app. First of all, let's remove the text "OpenGL ES and XAML". Open the file OpenGLESPage.xaml and remove the TextBlock at line 11.
 
 ````XML
 <TextBlock Text="OpenGL ES and XAML" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" />
@@ -71,7 +71,7 @@ While you are editing this file, you should also set the page background to blac
 </Page>
 ````
 
-5. Press F5 to build and run the project. Your app should now look like this:
+1. Press F5 to build and run the project. Your app should now look like this:
 
 	![ANGLE app](../../Images/ex2-rotating-cube-black.PNG?raw=true "ANGLE app")
 
@@ -83,21 +83,13 @@ Note: The following section uses code snippets to insert code into your project.
 
 1. Open the file Breakout/SimpleRenderer.h. Delete all of the code in the file. 
 
-2. Right click and select Insert Snippet from the menu.
+1. Copy the code from  [SimpleRenderer.h](./End/Breakout/SimpleRenderer.h) and paste it into SimpleRenderer.h.
 
-	![Insert Snippet](../../Images/ex2-simplerenderer.h-insert-snippet.png?raw=true "Insert Snippet")
+1. Open the file Breakout/SimpleRenderer.cpp. Delete all of the code in the file. 
 
-	_Insert Snippet_
-	
-3. Double click on My Code Snippets and then click on SimpleRenderer.h.
+1. Copy the code from  [SimpleRenderer.cpp](./End/Breakout/SimpleRenderer.cpp) and paste it into SimpleRenderer.cpp.
 
-	![Select Snippet](../../Images/ex2-simplerenderer.h-snippet.png?raw=true "Select Snippet")
-
-	_Select Snippet_
-
-4. Repeat steps 6, 7 and 8 for SimpleRenderer.cpp
-
-5. Save your work. Press F5 to build and run your app. You app should now look like this:
+1. Save your work. Press F5 to build and run your app. You app should now look like this:
 
 	![Breakout App](../../Images/ex2-breakout-app.png?raw=true "Breakout App")
 
@@ -170,6 +162,9 @@ void OpenGLESPage::StartRenderLoop()
     ....
 }
 ````
+
+We also updated the code in [App.xaml.h](./End/Breakout/App.xaml.h)  amd App.xaml.cpp [App.xaml.cpp](./End/Breakout/App.xaml.cpp). This will allow your app to pass [Windows App Certification Kit](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/windows-app-certification-kit) testing (WACK).
+It is a good idea to run WACK tests often to make sure your app can be certified for release in the Windows Store. We will discuss WACK testing in a future tutorial.
 
 If you press F5 to run the game you will notice the following issues:
 
