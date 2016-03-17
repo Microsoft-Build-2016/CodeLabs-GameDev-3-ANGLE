@@ -16,21 +16,21 @@ The ANGLE XAML App for OpenGL ES template generates a Windows 10 XAML app that i
 
 1. Open **Breakout.sln** in the **CodeLabs/Workshops/Games/Module3-ANGLE/Source/Ex3/Begin** folder.  
 
-2. Select **Debug x64** from the Project Configuration and Platform dropdowns.
+1. Select **Debug x64** from the Project Configuration and Platform dropdowns.
 
 	![Configuring the build target](../../Images/ex2-debug-x64.PNG?raw=true "Configuring the build target")
 
 	_Configuring the build target_
 
-3. Press **F5** to build and run the project. The app should look like the following.
+1. Press **F5** to build and run the project. The app should look like the following.
 
 	![Breakout App](../../Images/ex2-breakout-app.png?raw=true "Breakout App")
 
 	_Breakout App_
 
-4. Click the window maximize icon in the top right corner of the window or simply resize the window. You will see how the game does not update its size with the window size.
+1. Click the window maximize icon in the top right corner of the window or simply resize the window. You will see how the game does not update its size with the window size.
 
-5. Open the file **SimpleRenderer.cpp** and modify **SimpleRenderer::UpdateWindowSize()** as follows.
+1. Open the file **SimpleRenderer.cpp** and modify **SimpleRenderer::UpdateWindowSize()** as follows.
 
 	````C++
 	void SimpleRenderer::UpdateWindowSize(GLsizei width, GLsizei height)
@@ -53,7 +53,7 @@ The ANGLE XAML App for OpenGL ES template generates a Windows 10 XAML app that i
 
 	The rendering loop in `OpenGLESPage::StartRenderLoop()` updates the size of the window each time it is ready to render a new frame. It will call `SimpleRenderer::UpdateWindowSize()` with the current size of the window. If the size has changed you will need notify your game code.
 
-6. Open **Source/Game.h** and add the following `Resize()` public method declaration.
+1. Open **Source/Game.h** and add the following **Resize()** public method declaration.
 
 	````C++
 	void ResetPlayer();
@@ -62,7 +62,7 @@ The ANGLE XAML App for OpenGL ES template generates a Windows 10 XAML app that i
 	void Resize(GLuint width, GLuint height);
 	````
 
-7. Open Source/Game.cpp and add the following Resize() method at the end of the file.
+1. Open **Source/Game.cpp** and add the following **Resize()** method at the end of the file.
 
 	````C++
 	void Game::Resize(GLuint width, GLuint height)
@@ -95,7 +95,7 @@ The ANGLE XAML App for OpenGL ES template generates a Windows 10 XAML app that i
 
 	Note that when the window size has changed, your game code will need to update its projection matrix and glViewPort to accommodate the new window size. For this particular game, we also needed to add extra code to update the size of the blocks in the game level, the ball velocity and position. Each game is different so you may need to modify your game code to correctly handle the new window size. If you want to maintain a fixed window size, you may need to letterbox to fit your game inside the new window dimensions.
 
-8. Save your work. Press **F5** to build and run your app. You should now be able to resize your game when the window is resized by the user.
+1. Save your work. Press **F5** to build and run your app. You should now be able to resize your game when the window is resized by the user.
 
 #### Discussion ####
 

@@ -79,7 +79,7 @@ One of the difficulties of working with keyboard and pointer events in an ANGLE 
     }
     ````
 
-7. Add the following methods to the end of **OpenGLESPage.xaml.cpp**.
+1. Add the following methods to the end of **OpenGLESPage.xaml.cpp**.
 
     ````C++
     void OpenGLESPage::CreateInput()
@@ -184,15 +184,16 @@ One of the difficulties of working with keyboard and pointer events in an ANGLE 
 		};
 	}
 	````
-    Notice that SimpleRenderer now inherits from the WinRT::Input class. This helper class implements the code needed to queue the keyboard and pointer events that arrive on the apps UI thread and make the events available to the rendering thread. You can look at this code in Framework/source/utils/winrt/Input.cpp. The code uses a thread safe concurrent_queue to handle the queuing of the events.
 
-9. Open the file **SimpleRenderer.cpp**. Add the following using declaration near the top of the file:
+    Notice that SimpleRenderer now inherits from the WinRT::Input class. This helper class implements the code needed to queue the keyboard and pointer events that arrive on the apps UI thread and make the events available to the rendering thread. You can look at this code in **Framework/source/utils/winrt/Input.cpp**. The code uses a thread safe concurrent_queue to handle the queuing of the events.
+
+1. Open the file **SimpleRenderer.cpp**. Add the following using declaration near the top of the file:
 
     ````C++
     using namespace WinRT;
     ````
 
-10. Add a call to **ProcessEvents()** in the **SimpleRenderer::Draw()** method near line 30;
+1. Add a call to **ProcessEvents()** in the **SimpleRenderer::Draw()** method near line 30;
 
     ````C++
     void SimpleRenderer::Draw()
@@ -212,7 +213,7 @@ One of the difficulties of working with keyboard and pointer events in an ANGLE 
 
     **ProcessEvents()** will dequeue the events and send them to our game.
 
-11. Add the following methods to the end of **SimpleRenderer.cpp**
+1. Add the following methods to the end of **SimpleRenderer.cpp**
 
     ````C++
     void SimpleRenderer::OnPointerPressed(std::shared_ptr<PointerEvent> e)
@@ -266,7 +267,7 @@ One of the difficulties of working with keyboard and pointer events in an ANGLE 
 
     As you may have noticed in the above code, keyboard keys are represented by VirtualKeys. You will need to map the VirtualKey codes to the expected character codes used by your game.
 
-12. Save your work. Press **F5** to build and run your app. Your app should now respond to the following input events:
+1. Save your work. Press **F5** to build and run your app. Your app should now respond to the following input events:
     - the space bar will launch the ball
     - the first click or touch event will also launch the ball
     - the left and right arrows will move the paddle

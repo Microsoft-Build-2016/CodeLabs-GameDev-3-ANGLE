@@ -16,21 +16,21 @@ In this exercise, you will use Visual Studio 2015 to create a new ANGLE project 
 
 	_Creating a New Project_
 
-2. Select the **XAML App for OpenGL ES (Windows Universal)** template from **Visual C++ | Windows | Universal** to start a new solution.
+1. Select the **XAML App for OpenGL ES (Windows Universal)** template from **Visual C++ | Windows | Universal** to start a new solution.
 
 	![Selecting the ANGLE XAML template](../../Images/ex1-new-angle-project.PNG?raw=true "Selecting the ANGLE XAML template")
 
 	_Selecting the ANGLE XAML template_
 
-3. Name the solution **Breakout** and save it in the **CodeLabs/Workshops/Games/Module3-ANGLE/Source/Ex1/Begin** folder. Click on **OK** to create the solution.
+1. Name the solution **Breakout** and save it in the **CodeLabs/Workshops/Games/Module3-ANGLE/Source/Ex1/Begin** folder. Click on **OK** to create the solution.
 
-4. Select **Debug x64** from the Project Configuration and Platform dropdowns.
+1. Select **Debug x64** from the Project Configuration and Platform dropdowns.
 
 	![Configuring the build target](../../Images/ex2-debug-x64.PNG?raw=true "Configuring the build target")
 
 	_Configuring the build target_
 
-5. Press the **F5** key to build and run your app. After the build completes, your app should look like the following.
+1. Press the **F5** key to build and run your app. After the build completes, your app should look like the following.
 
 	![Sample ANGLE app](../../Images/ex1-sample-angle-app.PNG?raw=true "Sample ANGLE app")
 

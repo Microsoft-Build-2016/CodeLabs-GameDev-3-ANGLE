@@ -17,7 +17,7 @@ Instead of manually adding potentially hundreds of files to our game's project f
 In this exercise, you will complete the following tasks:
 
 1. Learn how the resource files are added to the game.
-2. Modify a game resource.
+1. Modify a game resource.
 
 #### Task 1 - Adding Resources to the Game ####
 
@@ -51,9 +51,9 @@ In this exercise, you will complete the following tasks:
 
 1. Right click the **Breakout** project and select **Add Existing Property Sheet...**.
 
-	![Add Exising Property Sheet](../../Images/ex5-property-manager.png?raw=true "Add Exising Property Sheet")
+	![Add Existing Property Sheet](../../Images/ex5-property-manager.png?raw=true "Add Existing Property Sheet")
 
-	_Add exising property sheet_
+	_Add existing property sheet_
 
 1. Then select the file **resources.props** file in the folder **CodeLabs-GameDev-3-ANGLE\Source\Ex5\Begin\Breakout**.
 
@@ -61,13 +61,13 @@ In this exercise, you will complete the following tasks:
 
 	_resources.props_
 
-8. Close the Property Manager window.
+1. Close the Property Manager window.
 
 	![Close Property Manager](../../Images/ex5-close-property-manager.png?raw=true "Close Property Manager")
 
 	_Close Property Manager_
 
-9. Press **F5** to build and run the project. The app should look like the following.
+1. Press **F5** to build and run the project. The app should look like the following.
 
 	![Breakout App with Resources](../../Images/ex4-breakout-app-input.png?raw=true "Breakout App with Resources")
 
@@ -77,7 +77,7 @@ In this exercise, you will complete the following tasks:
 
 1. Now we are going to add a resource to our game. Copy the **awesomeface.png** file located at **CodeLabs-GameDev-3-ANGLE\Source\Ex5\Resources\textures\** to the **CodeLabs-GameDev-3-ANGLE\Source\Resources\textures\** folder.
 
-2. Open the file **Source/Game.cpp** and change line 53.
+1. Open the file **Source/Game.cpp** and change line 53.
 
 	from:
 
@@ -91,7 +91,7 @@ In this exercise, you will complete the following tasks:
 	ResourceManager::LoadTexture("textures/awesomeface.png", GL_TRUE, "face");
 	````
 
-3. Save your work. Press **F5** to build and run your app. Your app should now look like this:
+1. Save your work. Press **F5** to build and run your app. Your app should now look like this:
 
 	![Exercise 5 Complete](../../Images/ex5-end.png?raw=true "Ex5 Complete")
 

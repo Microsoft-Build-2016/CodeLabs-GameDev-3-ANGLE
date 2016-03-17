@@ -73,7 +73,7 @@ The ANGLE XAML App for OpenGL ES template generates a Windows 10 XAML app that i
 	</Page>
 	````
 
-1. Press **F5** to build and run the project. Your app should now look like the follwing.
+1. Press **F5** to build and run the project. Your app should now look like the following.
 
 	![ANGLE app](../../Images/ex2-rotating-cube-black.PNG?raw=true "ANGLE app")
 
@@ -93,7 +93,7 @@ In this task, you'll connect the ANGLE Framework to the Game Loop.
 
 1. Copy the code from  **[SimpleRenderer.cpp](./End/Breakout/SimpleRenderer.cpp)** and paste it into **SimpleRenderer.cpp**.
 
-1. Save your work. Press **F5** to build and run your app. You app should now look like the following.
+1. Save your work. Press **F5** to build and run your app. Your app should now look like the following.
 
 	![Breakout App](../../Images/ex2-breakout-app.png?raw=true "Breakout App")
 
@@ -101,7 +101,7 @@ In this task, you'll connect the ANGLE Framework to the Game Loop.
 
 #### Discussion ####
 
-In the original ANGLE template, all of the drawing code was contained in a the file **SimpleRenderer.cpp**. The Breakout game has all of its game code in **Source/Game.cpp**. We modified SimpleRenderer.cpp to work as an adapter from the ANGLE app framework to our Breakout game. Open the file **SimpleRenderer.cpp** and scroll to the **Draw()** function at line 25. Here you will see the typical update/render pattern for you to draw a single frame of your game.
+In the original ANGLE template, all of the drawing code was contained in the **SimpleRenderer.cpp** file. The Breakout game has all of its game code in **Source/Game.cpp**. We modified **SimpleRenderer.cpp** to work as an adapter from the ANGLE app framework to our Breakout game. Open the file **SimpleRenderer.cpp** and scroll to the **Draw()** function at line 25. Here you will see the typical update/render pattern for you to draw a single frame of your game.
 
 ````C++
 void SimpleRenderer::Draw()
@@ -118,7 +118,7 @@ void SimpleRenderer::Draw()
 }
 ````
 
-The SimpleRenderer::Draw() method will be called at 60 FPS by the rendering loop created in OpenGLESPage::StartRenderLoop() in OpenGLESPage.xaml.cpp around line 105.
+The `SimpleRenderer::Draw()` method will be called at 60 FPS by the rendering loop created in `OpenGLESPage::StartRenderLoop()` in **OpenGLESPage.xaml.cpp** around line 105.
 
 ````C++
 void OpenGLESPage::StartRenderLoop()
@@ -153,7 +153,7 @@ void OpenGLESPage::StartRenderLoop()
 }
 ````
 
-Please make note of another small change we made to OpenGLESPage::StartRenderLoop() around line 120. The original ANGLE template recreates and destroys the SimpleRenderer object every time the visibility of the app changes. In our code we will create our game code once to prevent having to reload all our game resources and shaders.
+Please make note of another small change we made to `OpenGLESPage::StartRenderLoop()` around line 120. The original ANGLE template recreates and destroys the SimpleRenderer object every time the visibility of the app changes. In our code we will create our game code once to prevent having to reload all our game resources and shaders.
 
 ````C++
 void OpenGLESPage::StartRenderLoop()
@@ -167,13 +167,14 @@ void OpenGLESPage::StartRenderLoop()
 }
 ````
 
-We also updated the code in [App.xaml.h](./End/Breakout/App.xaml.h)  amd App.xaml.cpp [App.xaml.cpp](./End/Breakout/App.xaml.cpp). This will allow your app to pass [Windows App Certification Kit](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/windows-app-certification-kit) testing (WACK).
+We also updated the code in [App.xaml.h](./End/Breakout/App.xaml.h) and App.xaml.cpp [App.xaml.cpp](./End/Breakout/App.xaml.cpp). This will allow your app to pass [Windows App Certification Kit](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/windows-app-certification-kit) testing (WACK).
+
 It is a good idea to run WACK tests often to make sure your app can be certified for release in the Windows Store. We will discuss WACK testing in a future tutorial.
 
 If you press **F5** to run the game you will notice the following issues:
 
 1. Resizing the window does not resize the game.
-2. The game does not respond to mouse/touch/keyboard events.
+1. The game does not respond to mouse/touch/keyboard events.
 
 #### Next ####
 

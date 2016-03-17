@@ -12,19 +12,19 @@ Our Breakout game is a Windows 10 UWP app. This means that the same code can run
 In this exercise you will complete the following steps:
 
 1. Run the phone on the Windows 10 Phone emulator.
-2. Modify the ANGLE template to correctly support the screen resolutions on the Windows 10 Phone.
+1. Modify the ANGLE template to correctly support the screen resolutions on the Windows 10 Phone.
 
 #### Task 1 - Running the Game on the Windows 10 Phone Emulator ####
 
 1. Open **Breakout.sln** in the **CodeLabs/Workshops/Games/Module3-ANGLE/Source/Ex6/Begin** folder.  
 
-2. Select **Debug x86** from the Project Configuration and Platform menus. Also select **Mobile Emulator 10.0.10586.0 WVGA 4 inch 1GB** from the device menu.
+1. Select **Debug x86** from the Project Configuration and Platform menus. Also select **Mobile Emulator 10.0.10586.0 WVGA 4 inch 1GB** from the device menu.
 
 	![Configuring the build target](../../Images/ex6-select-phone-emulator.png?raw=true "Configuring the build target")
 
 	_Configuring the build target and Phone emulator_
 
-3. Press **F5** to build and run the project. Visual Studio will launch the Windows 10 Phone emulator and load your app onto the phone. This process may take a few minutes to complete. Once the app has been loaded onto the phone, it should look like the following.
+1. Press **F5** to build and run the project. Visual Studio will launch the Windows 10 Phone emulator and load your app onto the phone. This process may take a few minutes to complete. Once the app has been loaded onto the phone, it should look like the following.
 
 	![Breakout App on Windows Phone_](../../Images/ex6-phone-wvga-4-inch.png?raw=true "Breakout App on Windows Phone_")
 
@@ -65,7 +65,7 @@ You may have noticed that our game looks kind of fuzzy on the Windows 10 phone s
     }
     ````
 
-2. Save your work. Press **F5** to build and run your app. Your app should now look a lot better since it is rendering at the resolution of the screen.
+1. Save your work. Press **F5** to build and run your app. Your app should now look a lot better since it is rendering at the resolution of the screen.
 
 	![Breakout App on Windows Phone_](../../Images/ex6-phone-correct-resolution.png?raw=true "Breakout App on Windows Phone_")
 
