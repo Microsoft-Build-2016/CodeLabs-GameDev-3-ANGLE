@@ -39,14 +39,18 @@ In order to run the exercises in this module, you will need to set up your envir
 1. ANGLE needs to be built and installed on your computer. **For this lab, ANGLE has already been built and installed in c:\angle**. If ANGLE is not installed on your computer, you will need to do the following:
 
     ####Compiling ANGLE from source####
-    1. Clone or download ANGLE from our [GitHub](https://github.com/MSOpenTech/angle) repository
+
+    1. Clone or download ANGLE from our [GitHub](https://github.com/MSOpenTech/angle) repository.
+
     1. Install our easy-to-use Visual Studio templates by running install.bat in the /templates/ directory of your copy of ANGLE.
-    1. Open the appropriate ANGLE Visual Studio solution for your project, and build all flavors of it. The Windows 10 Visual Studio solution for ANGLE is located in angle/winrt/10/src/angle.sln
-    1. For more information, see [ANGLE](https://github.com/MSOpenTech/angle)
+
+    1. Open the appropriate ANGLE Visual Studio solution for your project, and build all flavors of it. The Windows 10 Visual Studio solution for ANGLE is located in **angle/winrt/10/src/angle.sln**.
+
+    1. For more information, see [ANGLE](https://github.com/MSOpenTech/angle).
 
 > **Note:** Make sure you have checked all the dependencies for this module before running the setup.
 
->**Note**: Each exercise is accompanied by a starting solution located in the **Begin** folder of the exercise that allows you to follow each exercise independently of the others. Please be aware that the code snippets that are added during an exercise are missing from these starting solutions and may not work until you have completed the exercise. Inside the source code for an exercise, you will also find an **End** folder containing a Visual Studio solution with the code that results from completing the steps in the corresponding exercise. You can use these solutions as guidance if you need additional help as you work through this module.
+> **Note**: Each exercise is accompanied by a starting solution located in the **Begin** folder of the exercise that allows you to follow each exercise independently of the others. Please be aware that the code snippets that are added during an exercise are missing from these starting solutions and may not work until you have completed the exercise. Inside the source code for an exercise, you will also find an **End** folder containing a Visual Studio solution with the code that results from completing the steps in the corresponding exercise. You can use these solutions as guidance if you need additional help as you work through this module.
 
 ---
 

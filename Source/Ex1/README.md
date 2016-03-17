@@ -30,13 +30,13 @@ In this exercise, you will use Visual Studio 2015 to create a new ANGLE project 
 
 	_Configuring the build target_
 
-5. Press the **F5** key to build and run your app. After the build completes, your app should look like this:
+5. Press the **F5** key to build and run your app. After the build completes, your app should look like the following.
 
 	![Sample ANGLE app](../../Images/ex1-sample-angle-app.PNG?raw=true "Sample ANGLE app")
 
 	_Sample ANGLE app_
 
- Congratulations. You have created your first Windows 10 UWP ANGLE app.
+Congratulations. You have created your first Windows 10 UWP ANGLE app.
 
 #### Next ####
 

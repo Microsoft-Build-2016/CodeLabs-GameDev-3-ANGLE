@@ -3,7 +3,6 @@
 
 ---
 
-
 <a name="Exercise2" />
 ### Exercise 2: Integrating your Game Code with ANGLE ###
 
@@ -12,9 +11,11 @@ In this exercise, you will modify the ANGLE project you created in Exercise 1 to
 In this exercise you will complete the following steps:
 
 1. Modify the XAML page created by the ANGLE template to prepare the app for our game.
+
 1. Connect the ANGLE framework to our game's update/render loop.
 
 #### Task 1 - Modify the XAML ####
+
 The ANGLE XAML App for OpenGL ES template generates a Windows 10 XAML app that is correctly set up to use OpenGL ES 2.0 in your app. Your game code will need to be integrated with the OpenGLESPage.xaml page. This page handles the initialization of the OpenGL context and creates a rendering loop in which you will update and render your game. There are a few minor modifications we need to make to the OpenGLESPage XAML code to prepare the page for our game.
 
 1. Open **Breakout.sln** in the **CodeLabs/Workshops/Games/Module3-ANGLE/Source/Ex2/Begin** folder.
@@ -25,7 +26,7 @@ The ANGLE XAML App for OpenGL ES template generates a Windows 10 XAML app that i
 
 	_Configuring the build target_
 
-1. Press **F5** to build and run the project. The app should look like this:
+1. Press **F5** to build and run the project. The app should look like the following.
 
 	![ANGLE app](../../Images/ex1-sample-angle-app.PNG?raw=true "ANGLE app")
 
@@ -33,45 +34,46 @@ The ANGLE XAML App for OpenGL ES template generates a Windows 10 XAML app that i
 
 1. Close the app to stop debugging. We need to first make some simple modifications to the app. First of all, let's remove the text _OpenGL ES and XAML_. Open the file **OpenGLESPage.xaml** and remove the TextBlock at line 11.
 
- ````XML
- <TextBlock Text="OpenGL ES and XAML" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" />
- ````
+	````XML
+	<TextBlock Text="OpenGL ES and XAML" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" />
+	````
 
- Your XAML file should now look like this:
+	Your XAML file should now look like the following.
 
- ````XML
- <Page
-    x:Class="Breakout.OpenGLESPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Breakout"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+	````XML
+	<Page
+		x:Class="Breakout.OpenGLESPage"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="using:Breakout"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		mc:Ignorable="d">
 
-    <SwapChainPanel x:Name="swapChainPanel">
-    </SwapChainPanel>
- </Page>
- ````
-While you are editing this file, you should also set the page background to black by adding the line `Background="Black"`
+		<SwapChainPanel x:Name="swapChainPanel">
+		</SwapChainPanel>
+	</Page>
+	````
 
- ````XML
- <Page
-    x:Class="Breakout.OpenGLESPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Breakout"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Background="Black"
-    mc:Ignorable="d">
+	While you are editing this file, you should also set the page background to black by adding the line `Background="Black"`.
 
-    <SwapChainPanel x:Name="swapChainPanel">
-    </SwapChainPanel>
- </Page>
-````
+	````XML
+	<Page
+		x:Class="Breakout.OpenGLESPage"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="using:Breakout"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		Background="Black"
+		mc:Ignorable="d">
 
-1. Press **F5** to build and run the project. Your app should now look like this:
+		<SwapChainPanel x:Name="swapChainPanel">
+		</SwapChainPanel>
+	</Page>
+	````
+
+1. Press **F5** to build and run the project. Your app should now look like the follwing.
 
 	![ANGLE app](../../Images/ex2-rotating-cube-black.PNG?raw=true "ANGLE app")
 
@@ -91,7 +93,7 @@ In this task, you'll connect the ANGLE Framework to the Game Loop.
 
 1. Copy the code from  **[SimpleRenderer.cpp](./End/Breakout/SimpleRenderer.cpp)** and paste it into **SimpleRenderer.cpp**.
 
-1. Save your work. Press **F5** to build and run your app. You app should now look like this:
+1. Save your work. Press **F5** to build and run your app. You app should now look like the following.
 
 	![Breakout App](../../Images/ex2-breakout-app.png?raw=true "Breakout App")
 
@@ -99,7 +101,7 @@ In this task, you'll connect the ANGLE Framework to the Game Loop.
 
 #### Discussion ####
 
-In the original ANGLE template, all of the drawing code was contained in a the file SimpleRenderer.cpp. The Breakout game has all of its game code in Source/Game.cpp. We modified SimpleRenderer.cpp to work as an adapter from the ANGLE app framework to our Breakout game. Open the file SimpleRenderer.cpp and scroll to the Draw() function at line 25. Here you will see the typical update/render pattern for you to draw a single frame of your game.
+In the original ANGLE template, all of the drawing code was contained in a the file **SimpleRenderer.cpp**. The Breakout game has all of its game code in **Source/Game.cpp**. We modified SimpleRenderer.cpp to work as an adapter from the ANGLE app framework to our Breakout game. Open the file **SimpleRenderer.cpp** and scroll to the **Draw()** function at line 25. Here you will see the typical update/render pattern for you to draw a single frame of your game.
 
 ````C++
 void SimpleRenderer::Draw()
@@ -116,7 +118,7 @@ void SimpleRenderer::Draw()
 }
 ````
 
-The SimpleRenderer::Draw() method will be called at 60 FPS by the rendering loop created in OpenGLESPage::StartRenderLoop() in OpenGLESPage.xaml.cpp around line 105
+The SimpleRenderer::Draw() method will be called at 60 FPS by the rendering loop created in OpenGLESPage::StartRenderLoop() in OpenGLESPage.xaml.cpp around line 105.
 
 ````C++
 void OpenGLESPage::StartRenderLoop()
@@ -151,7 +153,7 @@ void OpenGLESPage::StartRenderLoop()
 }
 ````
 
-Please make note of another small change we made to OpenGLESPage::StartRenderLoop() around line 120. The original ANGLE template recreates and destroys the SimpleRenderer object every time the visibility of the app changes. In our code we will create our game code once to prevent having to reload all our game resources and shaders
+Please make note of another small change we made to OpenGLESPage::StartRenderLoop() around line 120. The original ANGLE template recreates and destroys the SimpleRenderer object every time the visibility of the app changes. In our code we will create our game code once to prevent having to reload all our game resources and shaders.
 
 ````C++
 void OpenGLESPage::StartRenderLoop()
@@ -168,7 +170,7 @@ void OpenGLESPage::StartRenderLoop()
 We also updated the code in [App.xaml.h](./End/Breakout/App.xaml.h)  amd App.xaml.cpp [App.xaml.cpp](./End/Breakout/App.xaml.cpp). This will allow your app to pass [Windows App Certification Kit](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/windows-app-certification-kit) testing (WACK).
 It is a good idea to run WACK tests often to make sure your app can be certified for release in the Windows Store. We will discuss WACK testing in a future tutorial.
 
-If you press F5 to run the game you will notice the following issues:
+If you press **F5** to run the game you will notice the following issues:
 
 1. Resizing the window does not resize the game.
 2. The game does not respond to mouse/touch/keyboard events.

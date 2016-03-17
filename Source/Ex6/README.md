@@ -7,8 +7,7 @@
 <a name="Exercise6" />
 ### Exercise 6: Windows 10 Phone ###
 
-Our Breakout game is a Windows 10 UWP app. This means that the same code can run as a desktop/tablet app as well as a Windows Phone app. This exercise will show you
-how to run Breakout on the Windows 10 Phone emulator. In future exercises we will add support for Windows 10 Phone specific features like supporting the back button.
+Our Breakout game is a Windows 10 UWP app. This means that the same code can run as a desktop/tablet app as well as a Windows Phone app. This exercise will show you how to run Breakout on the Windows 10 Phone emulator. In future exercises we will add support for Windows 10 Phone specific features like supporting the back button.
 
 In this exercise you will complete the following steps:
 
@@ -25,8 +24,7 @@ In this exercise you will complete the following steps:
 
 	_Configuring the build target and Phone emulator_
 
-3. Press **F5** to build and run the project. Visual Studio will launch the Windows 10 Phone emulator and load your app onto the phone. This process may take a few minutes to complete. Once the
-app has been loaded onto the phone, it should look like this:
+3. Press **F5** to build and run the project. Visual Studio will launch the Windows 10 Phone emulator and load your app onto the phone. This process may take a few minutes to complete. Once the app has been loaded onto the phone, it should look like the following.
 
 	![Breakout App on Windows Phone_](../../Images/ex6-phone-wvga-4-inch.png?raw=true "Breakout App on Windows Phone_")
 
@@ -36,9 +34,7 @@ You should be able to play the game by touching the screen using your mouse.
 
 #### Task 2 - Obtaining Correct Screen Resolution ####
 
-You may have noticed that our game looks kind of fuzzy on the Windows 10 phone screen. This is because by default, ANGLE specifies its window size (or SwapChainPanel size) in DIPs (Device Independent Pixels).
-This is usually not a problem in desktops apps as there is generally a 1-1 scaling factor between DIPs and logical DPI. However, on the phone, there is almost always the need for some scaling to get
-the true resolution of the screen. In order to get the ANGLE to use the actual resolution of the screen on a Windows phone, we will need to specify a scaling factor based on the logical DPI of the device.
+You may have noticed that our game looks kind of fuzzy on the Windows 10 phone screen. This is because by default, ANGLE specifies its window size (or SwapChainPanel size) in DIPs (Device Independent Pixels). This is usually not a problem in desktops apps as there is generally a 1-1 scaling factor between DIPs and logical DPI. However, on the phone, there is almost always the need for some scaling to get the true resolution of the screen. In order to get the ANGLE to use the actual resolution of the screen on a Windows phone, we will need to specify a scaling factor based on the logical DPI of the device.
 
 1. Modify **OpenGLESPage::CreateRenderSurface()** in **OpenGLESPage.xaml.cpp** as follows:
 
@@ -77,27 +73,25 @@ the true resolution of the screen. In order to get the ANGLE to use the actual r
 
 #### Discussion ####
 
-You have now run the Breakout game on a Windows 10 Phone at the resolution of the actual screen on the device. One important thing to consider is that depending on the complexity of the graphics
-in your game, you may need to reduce the resolution of the rendering chain in order to achieve 60 FPS. You will need to experiment with the parameters to mOpenGLES->CreateSurface() in
-OpenGLESPage::CreateRenderSurface() to find the best balance between resolution and performance.
+You have now run the Breakout game on a Windows 10 Phone at the resolution of the actual screen on the device. One important thing to consider is that depending on the complexity of the graphics in your game, you may need to reduce the resolution of the rendering chain in order to achieve 60 FPS. You will need to experiment with the parameters to `mOpenGLES->CreateSurface()` in `OpenGLESPage::CreateRenderSurface()` to find the best balance between resolution and performance.
 
-Take a look at OpenGLESPage::OnPointerPressed() around line 200 in OpenGLESPage.xaml.cpp.
+Take a look at `OpenGLESPage::OnPointerPressed()` around line 200 in **OpenGLESPage.xaml.cpp**.
 
-    ````C++
-    void OpenGLESPage::OnPointerPressed(Object^ sender, PointerEventArgs^ e)
-    {
-        mRenderer->QueuePointerEvent(PointerEventType::PointerPressed,
-            e->CurrentPoint->Position.X * mScreenResolutionScale,
-            e->CurrentPoint->Position.Y * mScreenResolutionScale,
-            e->CurrentPoint->PointerId);
-    }
-    ````
+````C++
+void OpenGLESPage::OnPointerPressed(Object^ sender, PointerEventArgs^ e)
+{
+	mRenderer->QueuePointerEvent(PointerEventType::PointerPressed,
+		e->CurrentPoint->Position.X * mScreenResolutionScale,
+		e->CurrentPoint->Position.Y * mScreenResolutionScale,
+		e->CurrentPoint->PointerId);
+}
+````
 
 You will notice that if we apply a scale factor to ANGLE's swapchain we will need to apply the same scale factor to the pointer coordinates before we send them on to our game.
-
 
 
 #### Next ####
 
 This completes the ANGLE workshop.
+
 - Return to [Start](../../README.md)

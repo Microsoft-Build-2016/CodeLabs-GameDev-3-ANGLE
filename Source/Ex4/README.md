@@ -3,7 +3,6 @@
 
 ---
 
-
 <a name="Exercise4" />
 ### Exercise 4: Handling Keyboard and Pointer Events ###
 
@@ -15,19 +14,19 @@ One of the difficulties of working with keyboard and pointer events in an ANGLE 
 
 1. Open **Breakout.sln** in the **CodeLabs/Workshops/Games/Module3-ANGLE/Source/Ex3/Begin** folder.  
 
-2. Select **Debug x64** from the Project Configuration and Platform dropdowns.
+1. Select **Debug x64** from the Project Configuration and Platform dropdowns.
 
 	![Configuring the build target](../../Images/ex2-debug-x64.PNG?raw=true "Configuring the build target")
 
 	_Configuring the build target_
 
-3. Press **F5** to build and run the project. The app should look like this:
+1. Press **F5** to build and run the project. The app should look like this:
 
 	![Breakout App](../../Images/ex2-breakout-app.png?raw=true "Breakout App")
 
 	_Breakout App_
 
-4. Open the file **OepnGLESPage.xaml.h**. Add the following lines of code at the end of the class declaration in the private section:
+1. Open the file **OepnGLESPage.xaml.h**. Add the following lines of code at the end of the class declaration in the private section.
 
     ````C++
     // Setup user input
@@ -47,7 +46,7 @@ One of the difficulties of working with keyboard and pointer events in an ANGLE 
     float mScreenResolutionScale;
     ````
 
-5. Open the file **OpenGLESPage.xaml.cpp**. Add the following using declarations at the top of the file:
+1. Open the file **OpenGLESPage.xaml.cpp**. Add the following using declarations at the top of the file.
 
     ````C++
     using namespace Windows::System::Threading;
@@ -56,7 +55,7 @@ One of the difficulties of working with keyboard and pointer events in an ANGLE 
     using namespace WinRT;
     ````
 
-6. Modify `OpenGLESPage::OpenGLESPage()` after line 20 to include the following code:
+1. Modify `OpenGLESPage::OpenGLESPage()` after line 20 to include the following code.
 
     ````C++
     OpenGLESPage::OpenGLESPage(OpenGLES* openGLES) :
@@ -80,7 +79,7 @@ One of the difficulties of working with keyboard and pointer events in an ANGLE 
     }
     ````
 
-7. Add the following methods to the end of **OpenGLESPage.xaml.cpp**:
+7. Add the following methods to the end of **OpenGLESPage.xaml.cpp**.
 
     ````C++
     void OpenGLESPage::CreateInput()
@@ -144,46 +143,47 @@ One of the difficulties of working with keyboard and pointer events in an ANGLE 
         }
     }
     ````
-8. Open the file **SimpleRenderer.h** and replace its contents with the following
 
- ````C++
-		#pragma once
+1. Open the file **SimpleRenderer.h** and replace its contents with the following
 
-    #include "pch.h"
-    #include "Game.h"
-    #include "Timer.h"
-    #include <memory>
-    #include "winrt/Input.h"
+	````C++
+	#pragma once
 
-    namespace Breakout
-    {
-        class SimpleRenderer : public WinRT::Input
-        {
-        public:
-            SimpleRenderer();
-            ~SimpleRenderer();
-            void Draw();
-            void UpdateWindowSize(GLsizei width, GLsizei height);
+	#include "pch.h"
+	#include "Game.h"
+	#include "Timer.h"
+	#include <memory>
+	#include "winrt/Input.h"
 
-        private:
-            std::shared_ptr<Game> mGame;
-            std::unique_ptr<Timer> mTimer;
+	namespace Breakout
+	{
+		class SimpleRenderer : public WinRT::Input
+		{
+			public:
+				SimpleRenderer();
+				~SimpleRenderer();
+				void Draw();
+				void UpdateWindowSize(GLsizei width, GLsizei height);
 
-            GLsizei mWindowWidth;
-            GLsizei mWindowHeight;
+			private:
+				std::shared_ptr<Game> mGame;
+				std::unique_ptr<Timer> mTimer;
 
-            int mDrawCount;
+				GLsizei mWindowWidth;
+				GLsizei mWindowHeight;
 
-            //User input
-            virtual void OnPointerPressed(std::shared_ptr<WinRT::PointerEvent> e);
-            virtual void OnPointerMoved(std::shared_ptr<WinRT::PointerEvent> e);
-            virtual void OnPointerReleased(std::shared_ptr<WinRT::PointerEvent> e);
-            virtual void OnKeyDown(std::shared_ptr<WinRT::KeyEvent> e);
-            virtual void OnKeyUp(std::shared_ptr<WinRT::KeyEvent> e);
-            void SetKeyState(Windows::System::VirtualKey key, bool state);
-        };
-    }
-    ````
+				int mDrawCount;
+
+				//User input
+				virtual void OnPointerPressed(std::shared_ptr<WinRT::PointerEvent> e);
+				virtual void OnPointerMoved(std::shared_ptr<WinRT::PointerEvent> e);
+				virtual void OnPointerReleased(std::shared_ptr<WinRT::PointerEvent> e);
+				virtual void OnKeyDown(std::shared_ptr<WinRT::KeyEvent> e);
+				virtual void OnKeyUp(std::shared_ptr<WinRT::KeyEvent> e);
+				void SetKeyState(Windows::System::VirtualKey key, bool state);
+		};
+	}
+	````
     Notice that SimpleRenderer now inherits from the WinRT::Input class. This helper class implements the code needed to queue the keyboard and pointer events that arrive on the apps UI thread and make the events available to the rendering thread. You can look at this code in Framework/source/utils/winrt/Input.cpp. The code uses a thread safe concurrent_queue to handle the queuing of the events.
 
 9. Open the file **SimpleRenderer.cpp**. Add the following using declaration near the top of the file:
@@ -209,6 +209,7 @@ One of the difficulties of working with keyboard and pointer events in an ANGLE 
         mDrawCount += 1;
     }
     ````
+
     **ProcessEvents()** will dequeue the events and send them to our game.
 
 11. Add the following methods to the end of **SimpleRenderer.cpp**
@@ -262,6 +263,7 @@ One of the difficulties of working with keyboard and pointer events in an ANGLE 
         }
     }
     ````
+
     As you may have noticed in the above code, keyboard keys are represented by VirtualKeys. You will need to map the VirtualKey codes to the expected character codes used by your game.
 
 12. Save your work. Press **F5** to build and run your app. Your app should now respond to the following input events:
@@ -279,8 +281,9 @@ One of the difficulties of working with keyboard and pointer events in an ANGLE 
 
 You have now added support for handling keyboard and pointer events.
 
-The Breakout game originally supported only keyboard events. However, Windows 10 UWP apps running on phones or in tablet mode do not have a keyboard. We had to add support for pointer events to Game.cpp.
-Take a look at Source/Game.cpp for examples of how pointer event support was added to the game.
+The Breakout game originally supported only keyboard events. However, Windows 10 UWP apps running on phones or in tablet mode do not have a keyboard. We had to add support for pointer events to **Game.cpp**.
+
+Take a look at **Source/Game.cpp** for examples of how pointer event support was added to the game.
 
 
 #### Next ####
