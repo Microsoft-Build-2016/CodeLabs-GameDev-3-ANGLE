@@ -21,7 +21,7 @@ In this exercise, you will complete the following tasks:
 
 #### Task 1 - Adding Resources to the Game ####
 
-1. Open **Breakout.sln** in the **CodeLabs/Workshops/Games/Module3-ANGLE/Source/Ex3/Begin** folder.  
+1. Open **Breakout.sln** in the **CodeLabs/Workshops/Games/Module3-ANGLE/Source/Ex5/Begin** folder.  
 
 1. Select **Debug x64** from the Project Configuration and Platform dropdowns.
 
