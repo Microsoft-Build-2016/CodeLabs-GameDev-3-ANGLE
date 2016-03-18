@@ -12,7 +12,7 @@ In this exercise, you will modify the game project from Exercise 3 to add suppor
 
 One of the difficulties of working with keyboard and pointer events in an ANGLE app is that the events are sent to the app's UI thread or high priority input thread. However, ANGLE's OpenGL context was created on the rendering thread. If we were to send the events directly to our game code, the events would occur on the wrong thread and the app would crash. In order to work around this, we will queue the events into a thread safe queue so the events can be consumed on the rendering thread. The QueuePointerEvent() and QueueKeyEvent() methods will handle the queuing of the events in the code listed in Step 7.
 
-1. Open **Breakout.sln** in the **CodeLabs/Workshops/Games/Module3-ANGLE/Source/Ex3/Begin** folder.  
+1. Open **Breakout.sln** in the **CodeLabs/Workshops/Games/Module3-ANGLE/Source/Ex4/Begin** folder.  
 
 1. Select **Debug x64** from the Project Configuration and Platform dropdowns.
 
