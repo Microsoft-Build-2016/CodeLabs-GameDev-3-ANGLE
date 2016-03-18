@@ -99,13 +99,10 @@ In this exercise, you will complete the following tasks:
 
 #### Discussion ####
 
-You have now learned how to add and modify the resources for your game. By placing the resources for your game outside of the Visual Studio project folders it will be easier to make your game cross platform. By using a property sheet to automatically add the game resources, you won't have to manually add potentially
-hundreds of resource files to your game project.
+You have now learned how to add and modify the resources for your game. By placing the resources for your game outside of the Visual Studio project folder it will be easier to make your game cross platform. By using a property sheet to automatically add the game resources, you won't have to manually add potentially hundreds of resource files to your game project.
 
 
 #### Next ####
-
-The next exercise is optional. Feel free to continue or return to the Start to complete the lab.
 
 - Continue on to [Exercise 6: Windows 10 Phone](../../Source/Ex6/README.md)
 - Return to [Start](../../README.md)
