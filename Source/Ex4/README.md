@@ -201,7 +201,7 @@ One of the difficulties of working with keyboard and pointer events in an ANGLE 
         if (mGame != nullptr)
         {
             float deltaTime = static_cast<float>(mTimer->getDeltaTime());
-            <pre><b>ProcessEvents();</b></pre>
+            ProcessEvents();
             mGame->ProcessInput(deltaTime);
             mGame->Update(deltaTime);
             mGame->Render();
