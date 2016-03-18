@@ -165,7 +165,7 @@ void OpenGLESPage::StartRenderLoop()
 }
 ````
 
-We also updated the code in [App.xaml.h](./End/Breakout/App.xaml.h) and App.xaml.cpp [App.xaml.cpp](./End/Breakout/App.xaml.cpp). This will allow your app to pass [Windows App Certification Kit](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/windows-app-certification-kit) testing (WACK).
+We also updated the code in [App.xaml.h](./End/Breakout/App.xaml.h) and [App.xaml.cpp](./End/Breakout/App.xaml.cpp). This will allow your app to pass [Windows App Certification Kit](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/windows-app-certification-kit) testing (WACK).
 
 It is a good idea to run WACK tests often to make sure your app can be certified for release in the Windows Store. We will discuss WACK testing in a future tutorial.
 
