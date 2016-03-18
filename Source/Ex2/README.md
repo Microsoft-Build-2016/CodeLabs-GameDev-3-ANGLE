@@ -83,11 +83,11 @@ The ANGLE XAML App for OpenGL ES template generates a Windows 10 XAML app that i
 
 In this task, you'll connect the ANGLE Framework to the Game Loop.
 
-1. Open the file **Breakout/SimpleRenderer.h**. Delete all of the code in the file.
+1. Open the file **SimpleRenderer.h**. Delete all of the code in the file.
 
 1. Copy the code from  **[SimpleRenderer.h](./End/Breakout/SimpleRenderer.h)** and paste it into **SimpleRenderer.h**.
 
-1. Open the file **Breakout/SimpleRenderer.cpp**. Delete all of the code in the file.
+1. Open the file **SimpleRenderer.cpp**. Delete all of the code in the file.
 
 1. Copy the code from  **[SimpleRenderer.cpp](./End/Breakout/SimpleRenderer.cpp)** and paste it into **SimpleRenderer.cpp**.
 
