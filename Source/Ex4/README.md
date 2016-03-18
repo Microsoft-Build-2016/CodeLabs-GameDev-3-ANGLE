@@ -289,7 +289,5 @@ Take a look at **Source/Game.cpp** for examples of how pointer event support was
 
 #### Next ####
 
-The next exercise is optional. Feel free to continue or return to the Start to complete the lab.
-
 - Continue on to [Exercise 5: Adding Resources to the Game](../..//Source/Ex5/README.md)
 - Return to [Start](../../README.md)
