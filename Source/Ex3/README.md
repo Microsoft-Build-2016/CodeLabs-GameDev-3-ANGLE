@@ -12,7 +12,7 @@ If your game only supports a fixed size (for example 640 x 480) or aspect ratio,
 
 #### Task 1 - Handling Window Size Changes ####
 
-The ANGLE XAML App for OpenGL ES template generates a Windows 10 XAML app that is correctly set up to use OpenGL ES 2.0 in your app. Your game code will need to be integrated with the OpenGLESPage.xaml page. This page handles the initialization of the OpenGL context and creates a rendering loop in which you will update and render your game. There are a few minor modifications we need to make to the OpenGLESPage XAML code to prepare the page for our game.
+The ANGLE XAML App for OpenGL ES template generates a Windows 10 UWP XAML app that is correctly set up to use OpenGL ES 2.0 in your app. Your game code will need to be integrated with the OpenGLESPage.xaml page. This page handles the initialization of the OpenGL context and creates a rendering loop in which you will update and render your game. There are a few minor modifications we need to make to the OpenGLESPage XAML code to prepare the page for our game.
 
 1. Open **Breakout.sln** in the **CodeLabs/Workshops/Games/Module3-ANGLE/Source/Ex3/Begin** folder.  
 
