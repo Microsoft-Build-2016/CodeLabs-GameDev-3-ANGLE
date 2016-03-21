@@ -20,7 +20,6 @@ std::map<std::string, Texture2D>    ResourceManager::Textures;
 std::map<std::string, Shader>       ResourceManager::Shaders;
 
 #ifdef WINRT
-
 std::wstring& getPlatformPathW(const GLchar* file)
 {
     static std::wstring sPath;
@@ -47,7 +46,6 @@ std::wstring& getPlatformPathW(const GLchar* file)
 
 std::string& ResourceManager::getPlatformPath(const GLchar* file)
 {
-
     static std::string sPath;
     sPath = file;
     return sPath;
