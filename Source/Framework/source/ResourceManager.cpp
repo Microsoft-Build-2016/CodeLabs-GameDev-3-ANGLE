@@ -32,7 +32,6 @@ std::wstring& getPlatformPathW(const GLchar* file)
 
 std::string& ResourceManager::getPlatformPath(const GLchar* file)
 {
-  
     static std::string sPath;
     sPath = ("Assets\\Resources\\");
     sPath.append(file);
