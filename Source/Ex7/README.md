@@ -37,7 +37,7 @@ The default ANGLE Visual Studio templates add references to the prebuilt version
 
 	_Unload project_
 
-1. Right click on the project and select Edit
+1. Right click on the Breakout project and select Edit
 
 	![Edit project](../../Images/ex7-edit-project.png?raw=true "Edit project")
 
@@ -82,7 +82,7 @@ The default ANGLE Visual Studio templates add references to the prebuilt version
     <AdditionalDependencies>mincore.lib;%(AdditionalDependencies)</AdditionalDependencies>
     ````
 
-1. Right click on the project and reload the project
+1. Right click on the Breakout project and reload the project
 
 	![Reload project](../../Images/ex7-reload-project.png?raw=true "Reload project")
 
