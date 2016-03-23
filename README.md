@@ -17,7 +17,7 @@ In this module, you will learn how to:
 - Handle window resizing
 - Add touch and keyboard events to your app
 - Add game resources to your app
-- Run your game on Windows 10 Phone
+- Run your game on Windows Phone
 
 <a name="Prerequisites"></a>
 ### Prerequisites ###
@@ -67,7 +67,7 @@ This module includes the following exercises:
 1. [Resizing the Window](./Source/Ex3/README.md)
 1. [Handling keyboard and pointer events](./Source/Ex4/README.md)
 1. [Adding Resources to the Game](./Source/Ex5/README.md)
-1. [Windows 10 Phone](./Source/Ex6/README.md)
+1. [Windows Phone](./Source/Ex6/README.md)
 
 ---
 
@@ -81,7 +81,7 @@ By completing this module you should have learned:
 1. how to handle window resizing.
 1. how to handle keyboard and pointer events.
 1. how to add resources to your game.
-1. how to run your game on Windows 10 Phone
+1. how to run your game on Windows Phone
 
 For more information on ANGLE, please refer to the [ANGLE wiki](https://github.com/MSOpenTech/angle/wiki) and the [ANGLE GitHub repo](https://github.com/MSOpenTech/angle).
 
