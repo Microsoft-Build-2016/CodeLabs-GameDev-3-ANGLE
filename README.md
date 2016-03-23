@@ -66,8 +66,8 @@ This module includes the following exercises:
 1. [Integrating your game code with ANGLE](./Source/Ex2/README.md)
 1. [Resizing the Window](./Source/Ex3/README.md)
 1. [Handling keyboard and pointer events](./Source/Ex4/README.md)
-1. [(Optional) Adding Resources to the Game](./Source/Ex5/README.md)
-1. [(Optional) Windows 10 Phone](./Source/Ex6/README.md)
+1. [Adding Resources to the Game](./Source/Ex5/README.md)
+1. [Windows 10 Phone](./Source/Ex6/README.md)
 
 ---
 
