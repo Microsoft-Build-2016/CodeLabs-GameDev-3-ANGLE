@@ -18,6 +18,7 @@ In this module, you will learn how to:
 - Add touch and keyboard events to your app
 - Add game resources to your app
 - Run your game on Windows Phone
+- Add ANGLE to your project using NuGet. Please note that this is the **recommended** method for adding ANGLE to a project.
 
 <a name="Prerequisites"></a>
 ### Prerequisites ###
@@ -68,6 +69,7 @@ This module includes the following exercises:
 1. [Handling keyboard and pointer events](./Source/Ex4/README.md)
 1. [Adding Resources to the Game](./Source/Ex5/README.md)
 1. [Windows Phone](./Source/Ex6/README.md)
+1. [Adding ANGLE using NuGet (optional)](./Source/Ex7/README.md)
 
 ---
 
@@ -81,7 +83,8 @@ By completing this module you should have learned:
 1. how to handle window resizing.
 1. how to handle keyboard and pointer events.
 1. how to add resources to your game.
-1. how to run your game on Windows Phone
+1. how to run your game on Windows Phone.
+1. how to add ANGLE to your project using NuGet. Please note that this is the **recommended** method for adding ANGLE to a project.
 
 For more information on ANGLE, please refer to the [ANGLE wiki](https://github.com/MSOpenTech/angle/wiki) and the [ANGLE GitHub repo](https://github.com/MSOpenTech/angle).
 
