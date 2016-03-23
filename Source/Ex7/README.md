@@ -16,7 +16,7 @@ The **recommended** way to use ANGLE is to add it to your Visual Studio project 
 
 In this exercise you will complete the following steps:
 
-1. Modify the Breakout project to remove references to the prebuild version of ANGLE.
+1. Modify the Breakout project to remove references to the prebuilt version of ANGLE.
 1. Use Nuget to add ANGLE to your project.
 
 #### Task 1 - Removing Prebuilt ANGLE references from your project ####
