@@ -7,7 +7,7 @@
 <a name="Exercise6" />
 ### Exercise 6: Windows Phone ###
 
-Our Breakout game is a Windows 10 UWP app. This means that the same code can run as a desktop/tablet app as well as a Windows Phone app. This exercise will show you how to run Breakout on the Windows 10 Phone emulator. In future exercises we will add support for Windows Phone specific features like supporting the back button.
+Our Breakout game is a Windows 10 UWP app. This means that the same code can run as a desktop/tablet app as well as a Windows Phone app. This exercise will show you how to run Breakout on the Windows Phone emulator. In future exercises we will add support for Windows Phone specific features like supporting the back button.
 
 In this exercise you will complete the following steps:
 
