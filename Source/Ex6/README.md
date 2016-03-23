@@ -1,5 +1,5 @@
 ﻿<a name="HOLTop" />
-# Windows 10 Phone #
+# Windows Phone #
 
 ---
 
