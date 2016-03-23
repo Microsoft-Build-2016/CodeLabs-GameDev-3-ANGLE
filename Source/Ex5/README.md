@@ -104,5 +104,5 @@ You have now learned how to add and modify the resources for your game. By placi
 
 #### Next ####
 
-- Continue on to [Exercise 6: Windows 10 Phone](../../Source/Ex6/README.md)
+- Continue on to [Exercise 6: Windows Phone](../../Source/Ex6/README.md)
 - Return to [Start](../../README.md)
