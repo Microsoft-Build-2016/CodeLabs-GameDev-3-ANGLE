@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Assets">
+      <UniqueIdentifier>6e4a518b-60f3-4927-ad86-b291af97554d</UniqueIdentifier>
+      <Extensions>bmp;fbx;gif;jpg;jpeg;tga;tiff;tif;png</Extensions>
+    </Filter>
+    <Filter Include="Binaries">
+      <Extensions>dll;</Extensions>
+    </Filter>
+    <Image Include="Assets\LockScreenLogo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square150x150Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Wide310x150Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Filter Include="Source">
+      <UniqueIdentifier>{49457db8-de1d-4f10-9642-e601923cce01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{402831ae-ca6d-44cd-ab1c-5c48564b4e37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\source">
+      <UniqueIdentifier>{07ebb892-ced8-451a-80d4-3262709c81c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\source\utils">
+      <UniqueIdentifier>{39cc456e-a40c-47e1-8ab6-3b6ea74a478c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\source\utils\windows">
+      <UniqueIdentifier>{2f45560e-03f1-44f9-9eb7-7c5f8562cc31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\source\utils\winrt">
+      <UniqueIdentifier>{0152713b-9aec-419c-bc0a-b46272cc1d5c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)SimpleRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)OpenGLES.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp" />
+    <ClCompile Include="App.xaml.cpp" />
+    <ClCompile Include="OpenGLESPage.xaml.cpp" />
+    <ClCompile Include="Source\Game.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameLevel.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BallObject.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ParticleGenerator.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\framework\source\GameObject.cpp">
+      <Filter>Framework\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\framework\source\ResourceManager.cpp">
+      <Filter>Framework\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\framework\source\Shader.cpp">
+      <Filter>Framework\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\framework\source\SpriteRenderer.cpp">
+      <Filter>Framework\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\framework\source\Texture.cpp">
+      <Filter>Framework\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\framework\source\utils\windows\WICTextureLoader.cpp">
+      <Filter>Framework\source\utils\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\framework\source\utils\windows\WindowsTimer.cpp">
+      <Filter>Framework\source\utils\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\framework\source\utils\winrt\Input.cpp">
+      <Filter>Framework\source\utils\winrt</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)SimpleRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)OpenGLES.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
+    <ClInclude Include="App.xaml.h" />
+    <ClInclude Include="OpenGLESPage.xaml.h" />
+    <ClInclude Include="Source\Game.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameLevel.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BallObject.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ParticleGenerator.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\framework\source\GameObject.h">
+      <Filter>Framework\source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\framework\source\ResourceManager.h">
+      <Filter>Framework\source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\framework\source\Shader.h">
+      <Filter>Framework\source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\framework\source\SpriteRenderer.h">
+      <Filter>Framework\source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\framework\source\Texture.h">
+      <Filter>Framework\source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\framework\source\utils\Timer.h">
+      <Filter>Framework\source\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\framework\source\utils\windows\WICTextureLoader.h">
+      <Filter>Framework\source\utils\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\framework\source\utils\windows\WindowsTimer.h">
+      <Filter>Framework\source\utils\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\framework\source\utils\winrt\Input.h">
+      <Filter>Framework\source\utils\winrt</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\StoreLogo.png">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Breakout_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="OpenGLESPage.xaml" />
+  </ItemGroup>
+</Project>
