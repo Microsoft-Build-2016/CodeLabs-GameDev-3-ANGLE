@@ -93,9 +93,9 @@ The default ANGLE Visual Studio templates add references to the prebuilt version
 
 1. Right click on the project and select Manage NuGet Packages…
 
-	![Reload project](../../Images/ex7-manage-nuget.png?raw=true "Reload project")
+	![Manage NuGet Packages](../../Images/ex7-manage-nuget.png?raw=true "[Manage NuGet Packages")
 
-	_Reload project_
+	_[Manage NuGet Packages_
 
 
 1. Click on Browse and then search for ANGLE.WindowsStore. Select ANGLE.WindowsStore in the search results, then click on Install
