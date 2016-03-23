@@ -93,5 +93,5 @@ You will notice that if we apply a scale factor to ANGLE's swapchain we will nee
 #### Next ####
 
 This completes the ANGLE workshop.
-
+- Continue on to [Exercise 7: Adding ANGLE using NuGet (optional)](../../Source/Ex7/README.md)
 - Return to [Start](../../README.md)
