@@ -23,7 +23,7 @@ In this exercise you will complete the following steps:
 
 The default ANGLE Visual Studio templates add references to the prebuilt versions of ANGLE that have been installed on your computer. Before we can add ANGLE using nuget, we need remove these references from the Breakout project file.
 
-1. Open **Breakout.sln** in the **CodeLabs/Workshops/Games/Module3-ANGLE/Source/Ex76/Begin** folder.  
+1. Open **Breakout.sln** in the **CodeLabs/Workshops/Games/Module3-ANGLE/Source/Ex7/Begin** folder.  
 
 1. Select **Debug x86** from the Project Configuration and Platform menus.
 
