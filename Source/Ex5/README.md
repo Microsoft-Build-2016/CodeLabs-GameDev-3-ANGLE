@@ -43,7 +43,7 @@ In this exercise, you will complete the following tasks:
 
 	_Resources folder_
 
-1. Instead of adding each resource file manually to our project, we are going to use a **[property sheet](./Begin/Breakout/resources.props)** to tell the project where to find the resource files. To add a property sheet, select **Property Manager** from the **View** menu.
+1. Instead of adding each resource file manually to our project, we are going to use a **[property sheet](./Begin/Breakout/resources.props)** to tell the project where to find the resource files. To add a property sheet, select **Property Manager** from the **View** menu. **Note:** You may need to select the **Property Manager** from **View -> Other Windows -> PropertyManger..** depending on how your copy of Visual Studio is configured.
 
 	![Property Manager](../../Images/ex5-property-manager.png?raw=true "Property Manager")
 

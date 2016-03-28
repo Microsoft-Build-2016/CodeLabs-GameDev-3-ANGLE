@@ -253,6 +253,8 @@ We also updated the code in [App.xaml.h](./End/Breakout/App.xaml.h) and [App.xam
 
 It is a good idea to run WACK tests often to make sure your app can be certified for release in the Windows Store. We will discuss WACK testing in a future tutorial.
 
+You may have noticed that a project named soil was added to the solution. This is a library used by our game to load image files as textures.
+
 If you press **F5** to run the game you will notice the following issues:
 
 1. Resizing the window does not resize the game.

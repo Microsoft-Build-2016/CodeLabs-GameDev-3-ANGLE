@@ -7,7 +7,7 @@
 <a name="Exercise7" />
 ### Exercise 7: Using the ANGLE NuGet Package ###
 
-The **recommended** way to use ANGLE is to add it to your Visual Studio project using NuGet. However, the ANGLE project currently does not provide a template that uses NuGet. However, it is relatively easy to modify the Visual Studio project to use the NuGet version of ANGLE.  Using the NuGet version of ANGLE has the following advantages:
+The **recommended** way to use ANGLE is to add it to your Visual Studio project using NuGet. However, the ANGLE project currently does not provide a template that uses NuGet. It is relatively easy to modify the Visual Studio project to use the NuGet version of ANGLE.  Using the NuGet version of ANGLE has the following advantages:
 
 1. The builds released to NuGet have been tested by the ANGLE team and are considered stable releases.
 1. The NuGet builds are referenced builds that can be used by the ANGLE team for investigating issues you may report.

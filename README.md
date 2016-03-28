@@ -35,6 +35,9 @@ The following is required to complete this module:
 
 <a name="Setup" />
 ### Setup ###
+
+**For the ANGLE Lab @ Build, Angle has all ready been setup for you. You may skip the Setup procedure.**
+
 In order to run the exercises in this module, you will need to set up your environment first.
 
 1. ANGLE needs to be built and installed on your computer. **For this lab, ANGLE has already been built and installed in c:\angle**. If ANGLE is not installed on your computer, you will need to do the following:
@@ -67,8 +70,8 @@ This module includes the following exercises:
 1. [Integrating your game code with ANGLE](./Source/Ex2/README.md)
 1. [Resizing the Window](./Source/Ex3/README.md)
 1. [Handling keyboard and pointer events](./Source/Ex4/README.md)
-1. [Adding Resources to the Game](./Source/Ex5/README.md)
-1. [Windows Phone](./Source/Ex6/README.md)
+1. [Adding Resources to the Game (optional)](./Source/Ex5/README.md)
+1. [Windows Phone (optional)](./Source/Ex6/README.md)
 1. [Adding ANGLE using NuGet (optional)](./Source/Ex7/README.md)
 
 ---
