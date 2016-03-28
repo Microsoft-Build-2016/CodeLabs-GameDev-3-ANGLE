@@ -85,11 +85,95 @@ In this task, you'll connect the ANGLE Framework to the Game Loop.
 
 1. Open the file **SimpleRenderer.h**. Delete all of the code in the file.
 
-1. Copy the code from  **[SimpleRenderer.h](./End/Breakout/SimpleRenderer.h)** and paste it into **SimpleRenderer.h**.
+1. Copy the following code and paste it into **SimpleRenderer.h**.
+
+    ````C++
+    #pragma once
+
+    #include "pch.h"
+    #include "Game.h"
+    #include "Timer.h"
+    #include <memory>
+
+    namespace Breakout
+    {
+        class SimpleRenderer
+        {
+        public:
+            SimpleRenderer();
+            ~SimpleRenderer();
+            void Draw();
+            void UpdateWindowSize(GLsizei width, GLsizei height);
+
+        private:
+            std::shared_ptr<Game> mGame;
+            std::unique_ptr<Timer> mTimer;
+
+
+            GLsizei mWindowWidth;
+            GLsizei mWindowHeight;
+
+            int mDrawCount;
+        };
+    }
+    ````
+
 
 1. Open the file **SimpleRenderer.cpp**. Delete all of the code in the file.
 
-1. Copy the code from  **[SimpleRenderer.cpp](./End/Breakout/SimpleRenderer.cpp)** and paste it into **SimpleRenderer.cpp**.
+1. Copy the following code and paste it into **SimpleRenderer.cpp**.
+
+    ````C++
+    //
+    // This file is used by the template to render a basic scene using GL.
+    //
+
+    #include "pch.h"
+    #include "SimpleRenderer.h"
+
+    using namespace Platform;
+    using namespace Windows::UI::Core;
+    using namespace Windows::System;
+    using namespace Breakout;
+
+    SimpleRenderer::SimpleRenderer() :
+        mWindowWidth(0),
+        mWindowHeight(0),
+        mDrawCount(0)
+    {
+        mTimer.reset(CreateTimer());
+    }
+
+    SimpleRenderer::~SimpleRenderer()
+    {
+    }
+
+    void SimpleRenderer::Draw()
+    {
+        if (mGame != nullptr)
+        {
+            float deltaTime = static_cast<float>(mTimer->getDeltaTime());
+            mGame->ProcessInput(deltaTime);
+            mGame->Update(deltaTime);
+            mGame->Render();
+        }
+
+        mDrawCount += 1;
+    }
+
+    void SimpleRenderer::UpdateWindowSize(GLsizei width, GLsizei height)
+    {
+        if (mGame == nullptr)
+        {
+            mGame = std::make_shared<Game>(width, height);
+            mGame->Init();
+            mTimer->start();
+        }
+
+        mWindowWidth = width;
+        mWindowHeight = height;
+    }
+    ````
 
 1. Save your work. Press **F5** to build and run your app. Your app should now look like the following.
 
